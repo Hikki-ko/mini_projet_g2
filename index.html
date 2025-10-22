@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toobovan</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header><h1>Toobovan</h1></header>
+    <!-- Main content -->
+    <main class="main_content">
+      <div class="content">
+        <div class="game_header">
+          <!-- Header du jeu -->
+          <h2>Quelle ville est la plus polluée ?</h2>
+          <!-- Affichage des scores -->
+          <div class="score_display">
+            <!-- Nombre de réponses correctes -->
+            <div class="score_item">
+              <span class="score_value" id="correctScore">0</span>
+              <span>🌟 Villes archivées</span>
+            </div>
+            <!-- Nombre de questions restantes -->
+            <div class="score_item">
+              <span class="score_value" id="totalQuestions">0/10</span>
+              <span>🔎 Tentatives restantes</span>
+            </div>
+          </div>
+        </div>
+        <!-- Affichage des villes proposées -->
+        <div class="quiz_area">
+          <!-- Ville proposée n°1 -->
+          <div class="city_item">
+            <span class="city_name"></span>
+            <span class="country_flag"></span>
+          </div>
+          <!-- Ville proposée n°2 -->
+          <div class="city_item">
+            <span class="city_name"></span>
+            <span class="country_flag"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Liste des villes archivées -->
+      <aside class="right_content">
+        <h2>Archives</h2>
+        <ul>
+          <li>Placeholder</li>
+        </ul>
+      </aside>
+    </main>
+    <footer>Tous droits réservés</footer>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+*, 
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Structure */
+.main_content{
+  max-width: 75rem;
+  margin: 1rem auto;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Commun */
+.content{
+  border: 1px solid black;
+  flex-basis: 75%;
+  padding: 1rem;
+}
+
+ul{
+  list-style: none;
+}
+
+/* Jeu */
+
+
+/* Affichage score */
+.score_display{
+  display: flex;
+}
+
+.score_item{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Aside */
+.right_content{
+  border: 1px solid black;
+  flex-basis: 25%;
+  padding: 1rem;
+}
