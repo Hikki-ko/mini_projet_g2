@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Toobovan</title>
+      <title>Toobovan</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
     <!--Polices Google Font-->
@@ -15,51 +15,77 @@
 
   <body>
     <!-- Header -->
-    <header><h1>Toobovan</h1></header>
+    <header>
+      <a href="#" class="titre_page">
+      <h1>Toobovan</h1>
+      </a>
+      <a href="#">
+        <img class="logo_titre" src="assets/images/favicon.ico" alt="Logo de la page représentant un nuage, une lune et du vent">
+      </a>
+    </header>
     <!-- Main content -->
     <main class="main_content">
       <div class="content">
         <div class="game_header">
+
           <!-- Header du jeu -->
           <h2>Quelle ville est la plus polluée ?</h2>
           <!-- Affichage des scores -->
           <div class="score_display">
             <!-- Nombre de réponses correctes -->
             <div class="score_item">
-              <span class="score_value" id="correctScore">0</span>
-              <span>🌟 Villes archivées</span>
+              <span class="score_value" id="correctScore">2</span>
+              <span> réponses correctes 🌟 </span>
             </div>
             <!-- Nombre de questions restantes -->
             <div class="score_item">
-              <span class="score_value" id="totalQuestions">0/10</span>
-              <span>🔎 Tentatives restantes</span>
+              <span class="score_value" id="totalQuestions">3</span>
+              <span>tentatives restantes 🔎 </span>
             </div>
           </div>
         </div>
-        <!-- Affichage des villes proposées -->
-        <div class="quiz_area">
-          <!-- Ville proposée n°1 -->
-          <div class="city_item">
-            <span class="city_name"></span>
-            <span class="country_flag"></span>
-          </div>
-          <!-- Ville proposée n°2 -->
-          <div class="city_item">
-            <span class="city_name"></span>
-            <span class="country_flag"></span>
-          </div>
-          <input class="button" type="submit" value="Confirmer">
-        </div>
+
+  <!-- Formulaire avec les villes (pour remplacer notre affichage texte simple de base) -->
+  <form class="quiz_formulaire" id="quizForm">
+    <div class="container_ville">
+
+  <!-- Ville proposée n°1 -->
+  <label class="item_ville">
+    <div class="ville_info">
+      <span class="nom_ville">PARIS, France</span>
+      <span class="drapeau_pays">🇫🇷</span>
+    </div>
+    <div class="selecteur"></div>
+    <input type="radio" name="ville" value="ville1">
+  </label>
+    
+  <!-- Ville proposée n°2 -->
+  <label class="item_ville">
+    <div class="ville_info">
+      <span class="nom_ville">VIENNE, Autriche</span>
+      <span class="drapeau_pays">🇦🇹</span>
+    </div>
+    <div class="selecteur"></div>
+    <input type="radio" name="ville" value="ville2">
+  </label>
+  </div>
+  
+  <button type="submit" class="button">Confirmer</button>
+</form>
       </div>
       <!-- Liste des villes archivées -->
       <aside class="right_content">
-        <h2>Archives</h2>
+        <h2>Villes archivées</h2>
         <ul>
           <li>Placeholder</li>
         </ul>
       </aside>
     </main>
-    <footer>Tous droits réservés</footer>
+    <footer>Alexandre, Candice, Zoé <br>Tous droits réservés</footer>
+  <!-- Bout de code permettant la lecture d'une musique de fond -->
+  <audio id="musiqueFond" loop>
+    <source src="assets/audio/musique_arriere_plan_ac.mp3" type="audio/mpeg">
+  </audio>
 
     <script type="text/javascript" src="assets/javascript/script.js"></script>
 
