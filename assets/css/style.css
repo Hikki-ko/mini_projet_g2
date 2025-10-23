@@ -6,6 +6,15 @@
   box-sizing: border-box;
 }
 
+:root {
+	--primary-color: #45059d;
+    --secondary-color: #e1dcff;
+    --tertiary-color: #fae671;
+    --black-color: #000;
+    --white-color: #FFFFFF;
+    --gray-color: #999;
+}
+
 /* Structure */
 .main_content{
   max-width: 75rem;
@@ -15,14 +24,48 @@
 }
 
 /* Commun */
+body{
+    background-color: var(--secondary-color);
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+}
+
 .content{
-  border: 1px solid black;
   flex-basis: 75%;
   padding: 1rem;
 }
 
+h2{
+  font-family: "Borel", cursive;
+  color: var(--primary-color);
+}
+
 ul{
   list-style: none;
+}
+
+.content, .right_content{
+  background-color: var(--white-color);
+  border: 1px solid var(--gray-color);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.button{
+  background-color: var(--tertiary-color);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: var(--primary-color);
+  font-family: "Borel", cursive;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.button:hover{
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 /* Jeu */
@@ -40,7 +83,6 @@ ul{
 
 /* Aside */
 .right_content{
-  border: 1px solid black;
   flex-basis: 25%;
   padding: 1rem;
 }
