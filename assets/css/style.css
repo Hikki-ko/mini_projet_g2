@@ -25,12 +25,16 @@
 }
 
 .site_name{
+  margin-top : 2rem;
   font-family: "Borel", cursive;
   font-size: 3rem;
   color: var(--primary-color);
 }
 
 .logo_site{
+  position : absolute;
+  top : 15px;
+  left : 938px;
   width: 4rem;
   height: auto;
 }
@@ -125,6 +129,12 @@
   background-color: var(--primary-color);
 }
 
+.selector,
+.select_value,
+.progress_bar {
+  transition: all 0.1s ease-out;
+}
+
 #slider_input{
   appearance: none;
   -webkit-appearance: none; 
@@ -141,6 +151,7 @@
   cursor: pointer;
   position: relative;
   z-index: 3;
+  transition: background-color 0.2s ease;
 }
 
 /* Structure du quizz */
