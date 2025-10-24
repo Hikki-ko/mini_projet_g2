@@ -35,6 +35,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // Remplacement de la page d'introduction
     document.getElementById("introduction_content").classList.add("hidden");
     document.getElementById("quiz_container").classList.remove("hidden");
+    document.getElementById("bg_music").play();
   });
 
   // Démarrage du quizz
