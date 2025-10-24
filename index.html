@@ -18,19 +18,53 @@
   <body>
     <!-- Header -->
     <header>
-      <a href="#" class="titre_page">
-        <h1>Toobovan</h1>
-      </a>
-      <a href="#">
-        <img
-          class="logo_titre"
-          src="assets/images/favicon.ico"
-          alt="Logo de la page représentant un nuage, une lune et du vent"
-        />
-      </a>
+      <div class="site_name_container">
+        <h1 class="site_name">Toobovan</h1>
+        <span>
+          <img
+            class="logo_site"
+            src="assets/images/favicon.ico"
+            alt="Logo de la page représentant un nuage, une lune et du vent"
+          />
+        </span>
+      </div>
     </header>
+    <!-- Introduction -->
+    <div class="content introduction_content" id="introduction_content">
+      <h2>Testez vos connaissances !</h2>
+      <!-- Explication du jeu -->
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, vero
+        et corrupti assumenda nam quo? Quibusdam magni recusandae temporibus,
+        eaque error voluptate natus praesentium, earum officia quasi molestiae
+        molestias inventore.
+      </p>
+      <!-- Nombre de questions -->
+      <div class="slider_container">
+        <div class="range">
+          <div class="min">Minimum<span>1</span></div>
+          <div class="range_input">
+            <div class="selector">
+              <div class="select_value">50</div>
+              <div class="select_button"></div>
+            </div>
+            <div class="progress_bar"></div>
+            <input
+              type="range"
+              name=""
+              id="slider_input"
+              min="1"
+              max="100"
+              value="50"
+            />
+          </div>
+          <div class="max">Maximum<span>100</span></div>
+        </div>
+      </div>
+      <button class="button" id="startButton">Commencer</button>
+    </div>
     <!-- Main content -->
-    <main class="main_content">
+    <main class="quiz_container hidden" id="quiz_container">
       <div class="content">
         <div class="game_header">
           <!-- Header du jeu -->
@@ -39,12 +73,12 @@
           <div class="score_display">
             <!-- Nombre de réponses correctes -->
             <div class="score_item">
-              <span class="score_value" id="correctScore">2</span>
+              <span class="score_value" id="correctScore">0</span>
               <span> réponses correctes 🌟 </span>
             </div>
             <!-- Nombre de questions restantes -->
             <div class="score_item">
-              <span class="score_value" id="totalQuestions">3</span>
+              <span class="score_value" id="totalQuestions">0</span>
               <span>tentatives restantes 🔎 </span>
             </div>
           </div>
@@ -86,14 +120,6 @@
       </aside>
     </main>
     <footer>Alexandre, Candice, Zoé <br />Tous droits réservés</footer>
-    <!-- Bout de code permettant la lecture d'une musique de fond -->
-    <audio id="musiqueFond" loop>
-      <source
-        src="assets/audio/musique_arriere_plan_ac.mp3"
-        type="audio/mpeg"
-      />
-    </audio>
-
     <script type="text/javascript" src="assets/javascript/script.js"></script>
   </body>
 </html>

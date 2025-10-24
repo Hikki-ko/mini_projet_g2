@@ -6,58 +6,150 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-=======
 /* Couleurs */
->>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 :root {
 	--primary-color: #45059d;
     --secondary-color: #e1dcff;
     --tertiary-color: #fae671;
     --black-color: #000;
     --white-color: #FFFFFF;
-<<<<<<< HEAD
-    --gray-color: #999;
-=======
     --gray-color: #999;}
 
 /* Header */
-header {
-  padding: 2rem;
+.site_name_container{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  margin: 1rem auto 0.5rem auto;
+  gap: 0.5rem;
+}
+
+.site_name{
+  font-family: "Borel", cursive;
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.logo_site{
+  width: 4rem;
+  height: auto;
+}
+
+
+/* Introduction */
+.introduction_content{
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Slider */
+.slider_container{
+  margin-top: 5rem;
+  padding: 1rem;
+  width: 650px;
+  justify-self: center;
+}
+
+.range{
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
-header h1 {
-  font-family: "Borel", cursive;
+.min, 
+.max{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--primary-color);
-  font-size: 2.5rem;
 }
 
-.titre_page{
-  text-decoration: none;
-}
-
-.logo_titre {
-  height: 50px;
-  width: auto;
+.range_input{
   position: relative;
-  top: -39px;
-  left: -32px;
->>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 2.5rem;
 }
 
-/* Structure */
-.main_content{
+.selector{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-90%);
+  z-index: 1;
+}
+
+.select_value{
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 3rem;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  text-align: center;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+.select_value::after{
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  transform: rotate(45deg);
+  background-color: var(--primary-color);
+  z-index: -1;
+}
+
+.select_button{
+  width: 3rem;
+  height: 1rem;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.progress_bar{
+  position: absolute;
+  height: 5px;
+  border-radius: 5px;
+  width: 50%;
+  background-color: var(--primary-color);
+}
+
+#slider_input{
+  appearance: none;
+  -webkit-appearance: none; 
+  height: 5px;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+}
+
+#slider_input::-webkit-slider-thumb{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 3rem;
+  height: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+/* Structure du quizz */
+
+.quiz_container{
   max-width: 75rem;
   margin: 1rem auto;
   display: flex;
-<<<<<<< HEAD
-  gap: 1rem;
-=======
   gap: 4rem;
->>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 }
 
 /* Commun */
@@ -66,18 +158,11 @@ body{
     scroll-behavior: smooth;
     font-family: "Montserrat", sans-serif;
 }
-
+.hidden {
+    display: none;
+}
 .content{
   flex-basis: 75%;
-<<<<<<< HEAD
-  padding: 1rem;
-}
-
-h2{
-  font-family: "Borel", cursive;
-  color: var(--primary-color);
-  text-align: center;
-=======
   padding: 2rem;
 }
 
@@ -89,24 +174,12 @@ h2{
   font-family: "Borel", cursive;
   color: var(--primary-color);
 
->>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 }
 
 ul{
   list-style: none;
 }
 
-<<<<<<< HEAD
-.content, .right_content{
-  background-color: var(--white-color);
-  border: 1px solid var(--gray-color);
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-}
-
-.button{
-  background-color: var(--tertiary-color);
-  padding: 1rem 2rem;
-=======
 .right_content{
   padding:1.5rem;
 }
@@ -125,7 +198,6 @@ ul{
   padding: 1rem;
   padding-bottom: 0.6rem;
   margin-bottom: 0.6rem;
->>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
   border: none;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -134,33 +206,21 @@ ul{
   font-family: "Borel", cursive;
   font-weight: 600;
   font-size: 1.2rem;
+  transition: transform .2s; /* Animation */
 }
 
 .button:hover{
   color: var(--secondary-color);
   background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.button:active{
+  transform: scale(1.2);
 }
 
 /* Jeu */
 
-<<<<<<< HEAD
-
-/* Affichage score */
-.score_display{
-  display: flex;
-  justify-content: space-between;
-}
-
-.score_item{
-  display: flex;
-  flex-direction: column;
-}
-
-/* Aside */
-.right_content{
-  flex-basis: 25%;
-  padding: 1rem;
-=======
 .quiz_formulaire {
   margin-top: 2rem;
 }
@@ -223,5 +283,4 @@ footer{
   margin-top: 13rem;
   text-align: center;
   color: #9482a3;
->>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 }
