@@ -6,13 +6,46 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
+=======
+/* Couleurs */
+>>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 :root {
 	--primary-color: #45059d;
     --secondary-color: #e1dcff;
     --tertiary-color: #fae671;
     --black-color: #000;
     --white-color: #FFFFFF;
+<<<<<<< HEAD
     --gray-color: #999;
+=======
+    --gray-color: #999;}
+
+/* Header */
+header {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header h1 {
+  font-family: "Borel", cursive;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+.titre_page{
+  text-decoration: none;
+}
+
+.logo_titre {
+  height: 50px;
+  width: auto;
+  position: relative;
+  top: -39px;
+  left: -32px;
+>>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 }
 
 /* Structure */
@@ -20,7 +53,11 @@
   max-width: 75rem;
   margin: 1rem auto;
   display: flex;
+<<<<<<< HEAD
   gap: 1rem;
+=======
+  gap: 4rem;
+>>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 }
 
 /* Commun */
@@ -32,6 +69,7 @@ body{
 
 .content{
   flex-basis: 75%;
+<<<<<<< HEAD
   padding: 1rem;
 }
 
@@ -39,12 +77,26 @@ h2{
   font-family: "Borel", cursive;
   color: var(--primary-color);
   text-align: center;
+=======
+  padding: 2rem;
+}
+
+h2{
+  text-align: center;
+  margin-top: 2.2rem;
+  font-size: 1.9rem;
+  font-weight: lighter;
+  font-family: "Borel", cursive;
+  color: var(--primary-color);
+
+>>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 }
 
 ul{
   list-style: none;
 }
 
+<<<<<<< HEAD
 .content, .right_content{
   background-color: var(--white-color);
   border: 1px solid var(--gray-color);
@@ -54,6 +106,26 @@ ul{
 .button{
   background-color: var(--tertiary-color);
   padding: 1rem 2rem;
+=======
+.right_content{
+  padding:1.5rem;
+}
+.content, .right_content{
+  background-color: var(--white-color);
+  border: 1px solid var(--gray-color);
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.button{
+  display: block;
+  margin : 0 auto;
+  background-color: var(--tertiary-color);
+  padding: 1rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+>>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
   border: none;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -71,6 +143,7 @@ ul{
 
 /* Jeu */
 
+<<<<<<< HEAD
 
 /* Affichage score */
 .score_display{
@@ -87,4 +160,68 @@ ul{
 .right_content{
   flex-basis: 25%;
   padding: 1rem;
+=======
+.quiz_formulaire {
+  margin-top: 2rem;
+}
+
+.container_ville {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin-bottom: 2rem;
+}
+
+.item_ville {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.nom_ville {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.ville_info{
+  font-size: 1.4rem;
+  padding: 1.5rem;
+}
+
+/* Affichage score */
+.score_display {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin-top: 1rem;
+}
+
+.score_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color:#000;
+}
+
+.score_value {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.1rem;
+}
+
+
+/* Aside */
+.right_content{
+  flex-basis: 35%;
+}
+
+/* Footer */
+footer{
+  font-size: 0.8rem;
+  margin-top: 13rem;
+  text-align: center;
+  color: #9482a3;
+>>>>>>> d754403c134a807cf4db07824238f2f2ba8c0361
 }

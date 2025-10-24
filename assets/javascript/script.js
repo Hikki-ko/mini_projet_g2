@@ -18,12 +18,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const cityItems = document.querySelectorAll(".city_item");
   const correctScoreElement = document.getElementById("correctScore");
   const totalQuestionsElement = document.getElementById("totalQuestions");
+  const radioSelect = document.querySelectorAll('input[type="radio"]');
+  const musiqueFond = document.querySelector("#musiqueFond");
 
   //On définit les données du jeu
   let correctScore = 0;
   let totalQuestions = 10;
   let currentQuestion = 0;
-  const collectedCities = []; //pour stocker les données des villes de l'API
+  let cityData = []; //pour stocker les données des villes de l'API
 
   function initGame() {
     correctScore = 0;
@@ -41,4 +43,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
   confirmButton.addEventListener("click", () => {
     initGame();
   });
+
+  // Effet sonore de click sur le formulaire
+  document.addEventListener("click", () => {
+    const clickSound = new Audio("assets/audio/clic_radio.mp3");
+    clickSound.volume = 0.3;
+    clickSound.play();
+  });
+
+  // Musique de fond sur premier clic
+  document.addEventListener(
+    "click",
+    () => {
+      musiqueFond.volume = 0.2;
+      musiqueFond.play();
+    },
+    { once: true }
+  );
 });
