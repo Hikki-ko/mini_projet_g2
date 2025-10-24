@@ -6,12 +6,65 @@
     <title>Toobovan</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+    <!--Polices Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Borel&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <!-- Header -->
-    <header><h1>Toobovan</h1></header>
+    <header>
+      <div class="site_name_container">
+        <h1 class="site_name">Toobovan</h1>
+        <span>
+          <img
+            class="logo_site"
+            src="assets/images/favicon.ico"
+            alt="Logo de la page représentant un nuage, une lune et du vent"
+          />
+        </span>
+      </div>
+    </header>
+    <!-- Introduction -->
+    <div class="content introduction_content" id="introduction_content">
+      <h2>Testez vos connaissances !</h2>
+      <!-- Explication du jeu -->
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, vero
+        et corrupti assumenda nam quo? Quibusdam magni recusandae temporibus,
+        eaque error voluptate natus praesentium, earum officia quasi molestiae
+        molestias inventore.
+      </p>
+      <!-- Nombre de questions -->
+      <div class="slider_container">
+        <div class="range">
+          <div class="min">Minimum<span>1</span></div>
+          <div class="range_input">
+            <div class="selector">
+              <div class="select_value">50</div>
+              <div class="select_button"></div>
+            </div>
+            <div class="progress_bar"></div>
+            <input
+              type="range"
+              name=""
+              id="slider_input"
+              min="1"
+              max="100"
+              value="50"
+            />
+          </div>
+          <div class="max">Maximum<span>100</span></div>
+        </div>
+      </div>
+      <button class="button" id="startButton">Commencer</button>
+    </div>
     <!-- Main content -->
-    <main class="main_content">
+    <main class="quiz_container hidden" id="quiz_container">
       <div class="content">
         <div class="game_header">
           <!-- Header du jeu -->
@@ -21,37 +74,52 @@
             <!-- Nombre de réponses correctes -->
             <div class="score_item">
               <span class="score_value" id="correctScore">0</span>
-              <span>🌟 Villes archivées</span>
+              <span> réponses correctes 🌟 </span>
             </div>
             <!-- Nombre de questions restantes -->
             <div class="score_item">
-              <span class="score_value" id="totalQuestions">0/10</span>
-              <span>🔎 Tentatives restantes</span>
+              <span class="score_value" id="totalQuestions">0</span>
+              <span>tentatives restantes 🔎 </span>
             </div>
           </div>
         </div>
-        <!-- Affichage des villes proposées -->
-        <div class="quiz_area">
-          <!-- Ville proposée n°1 -->
-          <div class="city_item">
-            <span class="city_name"></span>
-            <span class="country_flag"></span>
+
+        <!-- Formulaire avec les villes (pour remplacer notre affichage texte simple de base) -->
+        <form class="quiz_formulaire" id="quizForm">
+          <div class="container_ville">
+            <!-- Ville proposée n°1 -->
+            <label class="item_ville">
+              <div class="ville_info">
+                <span class="nom_ville">PARIS, France</span>
+                <span class="drapeau_pays">🇫🇷</span>
+              </div>
+              <div class="selecteur"></div>
+              <input type="radio" name="ville" value="ville1" />
+            </label>
+
+            <!-- Ville proposée n°2 -->
+            <label class="item_ville">
+              <div class="ville_info">
+                <span class="nom_ville">VIENNE, Autriche</span>
+                <span class="drapeau_pays">🇦🇹</span>
+              </div>
+              <div class="selecteur"></div>
+              <input type="radio" name="ville" value="ville2" />
+            </label>
           </div>
-          <!-- Ville proposée n°2 -->
-          <div class="city_item">
-            <span class="city_name"></span>
-            <span class="country_flag"></span>
-          </div>
-        </div>
+
+          <button type="submit" class="button">Confirmer</button>
+        </form>
       </div>
       <!-- Liste des villes archivées -->
       <aside class="right_content">
-        <h2>Archives</h2>
+        <h2>Villes archivées</h2>
         <ul>
           <li>Placeholder</li>
         </ul>
       </aside>
     </main>
-    <footer>Tous droits réservés</footer>
+    <footer>Alexandre, Candice, Zoé <br />Tous droits réservés</footer>
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
   </body>
 </html>
