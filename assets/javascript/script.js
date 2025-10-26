@@ -13,12 +13,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("introduction_content").hidden = false;
   const startButton = document.querySelector("#startButton");
 
+  //Variables globales
+  let numberOfQuestions;
+  let cityData = []; //pour stocker les données des villes de l'API
+  let currentcities = []; //stock les deux villes de la question actuelle
+  let currentQuestion = 1;
+  let correctScore = 0;
+
   // Fonction sélecteur du nombre de questions
   let selector = document.querySelector(".selector");
   let selectValue = document.querySelector(".select_value");
   let sliderInput = document.querySelector("#slider_input");
   let progressBar = document.querySelector(".progress_bar");
-  let numberOfQuestions;
 
   selectValue.innerText = sliderInput.value;
   progressBar.style.width = `${sliderInput.value}%`;
