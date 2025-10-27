@@ -47,8 +47,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Démarrage du jeu
     async function getTwoCities() {
+      const proxy = "https://cors-anywhere.herokuapp.com/";
       const res = await fetch(
-        `${API_URL}/v3/locations?limit=${numberOfQuestions}`,
+        `${proxy}https://api.openaq.org/v3/locations?limit=2`,
         {
           headers: { "X-API-KEY": API_KEY },
         }
