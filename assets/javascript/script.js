@@ -49,15 +49,32 @@ window.addEventListener("DOMContentLoaded", (event) => {
     async function getTwoCities() {
       const proxy = "https://cors-anywhere.herokuapp.com/";
       const res = await fetch(
-        `${proxy}https://api.openaq.org/v3/locations?limit=2`,
+        `${proxy}https://api.openaq.org/v3/locations?limit=100`,
         {
           headers: { "X-API-KEY": API_KEY },
         }
       );
       const data = await res.json();
-      console.log(data);
+       
+      // Mélanger les données du tableau
+      for (let i = data.results.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [data.results[i], data.results[j]] = [data.results[j], data.results[i]];
+      }
+
+      // Prendre les deux premières villes du tableau 
+      currentcities = [data.results[0], data.results[1]];
+      console.log(currentcities);
     }
-    getTwoCities();
+
+    // Affichage villes
+    getTwoCities().then(() => {
+      const city1 = currentcities[0].locality || currentcities[0].name.split('-')[0].trim();
+      const city2 = currentcities[1].locality || currentcities[1].name.split('-')[0].trim();
+      
+      document.querySelectorAll(".nom_ville")[0].textContent = `${city1}, ${currentcities[0].country.name}`;
+      document.querySelectorAll(".nom_ville")[1].textContent = `${city2}, ${currentcities[1].country.name}`;
+    });
   });
 });
 
