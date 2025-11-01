@@ -1,8 +1,3 @@
-// Déclarations variables
-const API_KEY =
-  "818da1085e7c8cc7389e4b0ac1a38065267d44aae3538f839c6527d128f4a740";
-const API_URL = "https://api.openaq.org";
-
 /**************
  *	On ajoute un évènement "lorsque l'arborescence DOM est chargée".
  *   Ainsi, nous sommes certains de manipuler des élements
@@ -15,12 +10,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   //Variables globales
   let numberOfQuestions;
-  let cityData = []; //pour stocker les données des villes de l'API
+  let cities = []; //pour stocker les données des villes de l'API
   let currentcities = []; //stock les deux villes de la question actuelle
   let currentQuestion = 1;
   let correctScore = 0;
 
-  // Fonction sélecteur du nombre de questions
+  // Sélecteur du nombre de questions
   let selector = document.querySelector(".selector");
   let selectValue = document.querySelector(".select_value");
   let sliderInput = document.querySelector("#slider_input");
@@ -36,9 +31,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
     progressBar.style.width = `${value}%`;
   };
 
-  startButton.addEventListener("click", () => {
+  // Fin sélecteur du nombre de questions
+  // Fonction pour récupérer les données nécessaires
+  async function getCities(numberOfQuestions) {
+    const res = await fetch(
+      `http://127.0.0.5:1000/locations?limit=${numberOfQuestions}`
+    );
+    const data = await res.json();
+    cities = data.results;
+    console.log("Liste des villes :", cities);
+  }
+
+  startButton.addEventListener("click", async () => {
     // Enregistrement du nombre de questions
     numberOfQuestions = sliderInput.value;
+    await getCities(numberOfQuestions);
     document.getElementById("totalQuestions").innerHTML = numberOfQuestions;
     // Remplacement de la page d'introduction
     document.getElementById("introduction_content").classList.add("hidden");
@@ -46,17 +53,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("bg_music").play();
 
     // Démarrage du jeu
-    async function getTwoCities() {
-      const res = await fetch(
-        `${API_URL}/v3/locations?limit=${numberOfQuestions}`,
-        {
-          headers: { "X-API-KEY": API_KEY },
-        }
-      );
-      const data = await res.json();
-      console.log(data);
-    }
-    getTwoCities();
+    async function pickTwoCities() {}
   });
 });
 
@@ -108,3 +105,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
 //   },
 //   { once: true }
 // );
+
+// Affichage villes
+// getTwoCities().then(() => {
+//   const city1 =
+//     currentcities[0].locality || currentcities[0].name.split("-")[0].trim();
+//   const city2 =
+//     currentcities[1].locality || currentcities[1].name.split("-")[0].trim();
+
+//   document.querySelectorAll(
+//     ".nom_ville"
+//   )[0].textContent = `${city1}, ${currentcities[0].country.name}`;
+//   document.querySelectorAll(
+//     ".nom_ville"
+//   )[1].textContent = `${city2}, ${currentcities[1].country.name}`;
+// });
