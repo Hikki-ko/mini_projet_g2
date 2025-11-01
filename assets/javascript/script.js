@@ -32,28 +32,41 @@ window.addEventListener("DOMContentLoaded", (event) => {
   };
 
   // Fin sélecteur du nombre de questions
+  //## FONCTIONS ##//
   // Fonction pour récupérer les données nécessaires
   async function getCities(numberOfQuestions) {
     const res = await fetch(
-      `http://127.0.0.5:1000/locations?limit=${numberOfQuestions}`
+      `http://127.0.0.5:1000/locations?limit=${numberOfQuestions}&parameter=pm25`
     );
     const data = await res.json();
     cities = data.results;
     console.log("Liste des villes :", cities);
   }
 
+  // Fonction pour choisir deux villes aléatoires
+  function pickTwoRandomCities(cities) {
+    const index1 = Math.floor(Math.random() * cities.length);
+    let index2;
+    do {
+      index2 = Math.floor(Math.random() * cities.length);
+    } while (index2 === index1);
+
+    return [cities[index1], cities[index2]];
+  }
+
   startButton.addEventListener("click", async () => {
     // Enregistrement du nombre de questions
     numberOfQuestions = sliderInput.value;
     await getCities(numberOfQuestions);
-    document.getElementById("totalQuestions").innerHTML = numberOfQuestions;
     // Remplacement de la page d'introduction
+    document.getElementById("totalQuestions").innerHTML = numberOfQuestions;
     document.getElementById("introduction_content").classList.add("hidden");
     document.getElementById("quiz_container").classList.remove("hidden");
     document.getElementById("bg_music").play();
 
     // Démarrage du jeu
-    async function pickTwoCities() {}
+    const [cityA, cityB] = pickTwoRandomCities(cities);
+    console.log("Deux villes à comparer :", cityA, cityB);
   });
 });
 

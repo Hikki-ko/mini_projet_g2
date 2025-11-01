@@ -4,7 +4,7 @@ const url = require("url");
 
 const API_KEY =
   "818da1085e7c8cc7389e4b0ac1a38065267d44aae3538f839c6527d128f4a740";
-const API_URL = "https://api.openaq.org";
+const API_URL = "https://api.openaq.org/v3/";
 
 // Création du serveur et de sa fonction de réponse aux requêtes
 const server = http.createServer((req, res) => {
@@ -15,9 +15,10 @@ const server = http.createServer((req, res) => {
   // Parse de l'URL de la requête
   const parsedURL = url.parse(req.url, true);
   const limit = parsedURL.query.limit || 10; // Valeur minimale décidée
+  const parameter = parsedURL.query.parameter || "pm25";
 
   // Appel à OpenAQ avec le paramètres "limit" défini dans le script du front
-  const apiUrl = `${API_URL}/v3/locations?limit=${limit}`;
+  const apiUrl = `${API_URL}locations?limit=${limit}&parameter=${parameter}`;
 
   https
     .get(apiUrl, { headers: { "X-API-KEY": API_KEY } }, (apiRes) => {
